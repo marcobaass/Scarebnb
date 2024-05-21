@@ -1,11 +1,38 @@
-<h1>Offers#index</h1>
-<h2>Where to go in {user_location}</h2>
-
-<% @offers.each do |offer| %>
-  <div class="card" style="width: 18rem;">
-  <img src="<%= offer.img %>" class="card-img-top" alt="">
-  <div class="card-body">
-  <h4 class="card-title"><%= offer.title %></h4>
-  <a href="<%= link_to "", "/" %>" class="btn btn-primary">click here for test</a>
+<main>
+  <div class="row">
+    <div id="banner" class="d-flex justify-content-center align-items-center mb-4">
+      <h1 class="">Search for a scary place !</h1>
+    </div>
   </div>
-<% end %>
+
+  <div class="container">
+    <div>
+      <h2>Where to go in {user_location}</h2>
+      <% @offers.each do |offer| %>
+        <div class="card d-flex rounded shadow-sm" style="width: 18rem;">
+        <%= image_tag(offer.images, :alt => offer.title) %>
+        <div class="card-body">
+        <h4 class="card-title"><%= offer.title %></h4>
+        <p><%= offer.price %>€</p>
+        <%= link_to "", offer_path(offer), class: "stretched-link" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div>
+      <h2>Last minute booking</h2>
+
+    <div>
+      <h2>Where to go in {user_location}</h2>
+      <% @offers.each do |offer| %>
+        <div class="card d-flex rounded shadow-sm" style="width: 18rem;">
+        <%= image_tag(offer.images, :alt => offer.title) %>
+        <div class="card-body">
+        <h4 class="card-title"><%= offer.title %></h4>
+        <p><%= offer.price %>€</p>
+        <%= link_to "", offer_path(offer), class: "stretched-link" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
