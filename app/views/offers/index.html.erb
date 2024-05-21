@@ -1,0 +1,11 @@
+<h1>Offers#index</h1>
+<h2>Where to go in {user_location}</h2>
+
+<% @offers.each do |offer| %>
+  <div class="card" style="width: 18rem;">
+  <img src="<%= offer.img %>" class="card-img-top" alt="">
+  <div class="card-body">
+  <h4 class="card-title"><%= offer.title %></h4>
+  <a href="<%= link_to "", "/" %>" class="btn btn-primary">click here for test</a>
+  </div>
+<% end %>
