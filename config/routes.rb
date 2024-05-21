@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
+  root to: 'offers#index'
   devise_for :users
-  get 'offers/index'
+  get 'offers/index', to: 'offers#index', as: :offers
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
