@@ -1,6 +1,6 @@
 <h1>dashboard <%= current_user.email %> </h1>
 <% @offers.each do |offer| %>
-<div class="card p-2 m-3 d-flex" style="width: 14rem;">
+<div class="card p-2 m-3 d-flexU" style="width: 14rem;">
 <%= image_tag(offer.images, :alt => "haunted house") %>
 <h3><%= offer.title %></h3>
 <h4><%= offer.city %></h4>
@@ -8,3 +8,5 @@
 <p><%= offer.price %></p>
 </div>
 <% end %>
+
+<%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }%>
