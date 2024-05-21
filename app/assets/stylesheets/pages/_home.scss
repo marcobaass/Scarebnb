@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+
+$font-family: "Roboto", sans-serif;
+$primary-color: #b9b9b9;
+$white: #FFF;
+
+body {
+  font-family: $font-family !important;
+}
+
+#banner {
+  height: 45vh ;
+  background-color: $primary-color;
+  background-image: url("jan-jakub-nanista-z9hvkSDWMIM-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  color: $white;
+}
+
+.card {
+    &:hover {
+      box-shadow:none !important;
+
+  }
+}

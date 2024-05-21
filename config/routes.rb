@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'offers#index'
   devise_for :users
   get 'offers/index', to: 'offers#index', as: :offers
+  get 'offer/:id', to: "offer#show", as: :offer
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
