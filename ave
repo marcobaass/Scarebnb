@@ -1,0 +1,45 @@
+=> 
+[[32m#<Offer:0x00007f9aabb59508[0m
+  id: [34m[1m1[0m,
+  title: [31m[1m"[0m[31mGothic Haunted Mansion[0m[31m[1m"[0m,
+  images: [31m[1m"[0m[31mhttps://[0m[31m[1m"[0m,
+  description:
+   [31m[1m"[0m[31mA spooky Gothic mansion with a dark history, perfect for those seeking a thrilling experience. The house is said to be haunted by the spirits of its former residents.[0m[31m[1m"[0m,
+  price: [35m[1m4500000.0[0m,
+  city: [31m[1m"[0m[31mSalem[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m13 Witch Way[0m[31m[1m"[0m,
+  user_id: [34m[1m1[0m,
+  created_at:
+   Tue, 21 May 2024 10:57:56.451262000 UTC +00:00,
+  updated_at:
+   Tue, 21 May 2024 10:57:56.451262000 UTC +00:00[32m>[0m,
+ [32m#<Offer:0x00007f9aabb593f0[0m
+  id: [34m[1m2[0m,
+  title: [31m[1m"[0m[31mAbandoned Victorian House[0m[31m[1m"[0m,
+  images:
+   [31m[1m"[0m[31mhttps://example.com/images/victorian_house.jpg[0m[31m[1m"[0m,
+  description:
+   [31m[1m"[0m[31mThis abandoned Victorian house exudes an eerie atmosphere. Rumors of ghostly apparitions and strange noises make it a popular spot for paranormal enthusiasts.[0m[31m[1m"[0m,
+  price: [35m[1m320000.0[0m,
+  city: [31m[1m"[0m[31mNew Orleans[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m666 Ghost Street[0m[31m[1m"[0m,
+  user_id: [34m[1m1[0m,
+  created_at:
+   Tue, 21 May 2024 10:59:47.485212000 UTC +00:00,
+  updated_at:
+   Tue, 21 May 2024 10:59:47.485212000 UTC +00:00[32m>[0m,
+ [32m#<Offer:0x00007f9aabb592d8[0m
+  id: [34m[1m3[0m,
+  title: [31m[1m"[0m[31mCreepy Cabin in the Woods[0m[31m[1m"[0m,
+  images:
+   [31m[1m"[0m[31mhttps://example.com/images/creepy_cabin.jpg[0m[31m[1m"[0m,
+  description:
+   [31m[1m"[0m[31mNestled deep in the woods, this creepy cabin is rumored to be haunted by a restless spirit. Ideal for a spine-chilling getaway or a unique vacation experience.[0m[31m[1m"[0m,
+  price: [35m[1m150000.0[0m,
+  city: [31m[1m"[0m[31mSleepy Hollow[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m1 Spooky Lane[0m[31m[1m"[0m,
+  user_id: [34m[1m1[0m,
+  created_at:
+   Tue, 21 May 2024 11:01:40.609690000 UTC +00:00,
+  updated_at:
+   Tue, 21 May 2024 11:01:40.609690000 UTC +00:00[32m>[0m]
