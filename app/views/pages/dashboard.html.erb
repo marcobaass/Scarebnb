@@ -1,4 +1,6 @@
-<h1>dashboard <%= current_user.email %> </h1>
+<div class="container mx-3">
+<h1>Dashboard</h1>
+<p><%= current_user.email %></p>
 <div class="offer-container d-flex">
 <% @offers.each do |offer| %>
 <div class="card p-2 m-3 d-flex" style="width: 14rem;">
@@ -12,3 +14,4 @@
 </div>
 
 <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }%>
+</div>
