@@ -1,17 +1,14 @@
 class BookingsController < ApplicationController
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new()
+    @booking.start_date = params[:booking][:start_date]
+    @booking.end_date = params[:booking][:end_date]
     @booking.user = current_user
-    @offer = Offer.find(params[:id])
+    @offer = Offer.find(params[:offer_id])
     @booking.offer = @offer
     @booking.save!
-  end
-
-  private
-
-  def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    redirect_to dashboard_path
   end
 
 end

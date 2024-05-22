@@ -8,7 +8,7 @@ class OffersController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    @booking = Booking.new(offer: @offer)
     @offer = Offer.find(params[:id])
   end
 

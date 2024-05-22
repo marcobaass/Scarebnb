@@ -2,6 +2,10 @@
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 <%# Details and Description from offer %>
-<%=  @offer.description  %>
+<%=  @offer.title  %>
+<%=  @offer.city  %>
+<%=  @offer.address  %>
+<%=  @offer.price  %>
 <%# SimpleForm for Booking (Start end date) %>
+<%= render 'offers/booking' %>
 <%# Button Booking --> dashboard %>
