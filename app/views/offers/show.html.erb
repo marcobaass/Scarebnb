@@ -1,6 +1,10 @@
 <%# Banner from offer %>
 <%= image_tag(@offer.images, :alt => "haunted house") %>
 <%# Details and Description from offer %>
-<%=  @offer.description  %>
+<%=  @offer.title  %>
+<%=  @offer.city  %>
+<%=  @offer.address  %>
+<%=  @offer.price  %>
 <%# SimpleForm for Booking (Start end date) %>
+<%= render 'offers/booking' %>
 <%# Button Booking --> dashboard %>
