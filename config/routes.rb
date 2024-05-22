@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root to: 'offers#index'
   devise_for :users
 
-  get 'offers/index', to: 'offers#index', as: :offers
-  get 'offers/:id', to: "offers#show", as: :offer
+  #get 'offers/index', to: 'offers#index', as: :offers
+  #get 'offers/:id', to: "offers#show", as: :offer
 
   get "up" => "rails/health#show", as: :rails_health_check
 

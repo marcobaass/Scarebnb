@@ -9,7 +9,7 @@
 <h4><%= offer.city %></h4>
 <p><%= offer.address %></p>
 <p><%= offer.price %></p>
-<%= button_to "Delete", offer_path(offer), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<%= link_to "Delete", offer_path(offer), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
 </div>
 <% end %>
 </div>
