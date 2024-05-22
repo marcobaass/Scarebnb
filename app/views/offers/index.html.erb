@@ -12,7 +12,9 @@
     <% @offers_all.each do |offer| %>
       <div class="">
         <div class="card rounded shadow-sm" style="width: 18rem;">
-          <%= image_tag(offer.images, :alt => offer.title) %>
+          <% offer.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
           <div class="card-body">
           <h4 class="card-title"><%= offer.title %></h4>
           <p><%= offer.price %>€</p>

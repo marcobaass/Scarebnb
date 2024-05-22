@@ -1,5 +1,7 @@
 <%# Banner from offer %>
-<%= image_tag(@offer.images, :alt => "haunted house") %>
+<% @offer.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <%# Details and Description from offer %>
 <%=  @offer.description  %>
 <%# SimpleForm for Booking (Start end date) %>
