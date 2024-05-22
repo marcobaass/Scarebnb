@@ -2,7 +2,9 @@
 <div class="offer-container d-flex">
 <% @offers.each do |offer| %>
 <div class="card p-2 m-3 d-flex" style="width: 14rem;">
-<%= image_tag(offer.images, :alt => "haunted house") %>
+  <% offer.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 <h3><%= offer.title %></h3>
 <h4><%= offer.city %></h4>
 <p><%= offer.address %></p>
