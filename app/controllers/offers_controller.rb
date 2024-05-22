@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   def index
     @offers = Offer.all
   end
-  
+
   def new
     @offer = Offer.new
   end
@@ -18,10 +18,19 @@ class OffersController < ApplicationController
     end
   end
 
+  def destroy
+    @offer = Offer.find(params[:id])
+    if @offer.destroy
+      redirect_to dashboard_path, notice: 'offer was successfully deleted.'
+    else
+      redirect_to dashboard_path, alert: 'offer could not be deleted.'
+    end
+  end
+
   private
 
   def offer_params
     params.require(:offer).permit(:title, :images, :description, :price, :city, :address)
   end
-  
+
 end
