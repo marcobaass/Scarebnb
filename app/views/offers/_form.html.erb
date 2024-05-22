@@ -11,7 +11,8 @@
         <%= f.input :address, label: 'Address', placeholder: 'Enter address', input_html: { class: 'form-control' } %>
         <%= f.input :description, label: 'Description', placeholder: 'Enter description', input_html: { class: 'form-control' } %>
         <%= f.input :price, label: 'Price', placeholder: 'Enter price', input_html: { class: 'form-control' } %>
-        <%= f.input :images, label: 'Images', placeholder: 'Upload images', input_html: { class: 'form-control' } %>
+        <!--<%= f.input :images, label: 'Images', placeholder: 'Upload images', input_html: { class: 'form-control' } %>-->
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit 'Submit', class: 'btn btn-primary' %>
         <%= link_to 'Go Back', dashboard_path(@offers), class: 'btn btn-primary' %>
       <% end %>
