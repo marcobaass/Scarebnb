@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'offers/index', to: 'offers#index', as: :offers
-  get 'offer/:id', to: "offer#show", as: :offer
+  get 'offers/:id', to: "offers#show", as: :offer
 
   get "up" => "rails/health#show", as: :rails_health_check
 
