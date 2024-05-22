@@ -23,6 +23,15 @@ class OffersController < ApplicationController
     end
   end
 
+  def destroy
+    @offer = Offer.find(params[:id])
+    if @offer.destroy
+      redirect_to dashboard_path, notice: 'offer was successfully deleted.'
+    else
+      redirect_to dashboard_path, alert: 'offer could not be deleted.'
+    end
+  end
+
   private
 
   def offer_params
