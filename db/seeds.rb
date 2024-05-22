@@ -28,3 +28,5 @@ offer.save!
 puts 'Creating bookings'
 booking = Booking.new(status: 1, start_date: '2024/10/11', end_date: '2024/10/15', user_id: user.id, offer_id: offer.id)
 booking.save!
+
+# Offer.photos.attach(io: file, filename: "")
