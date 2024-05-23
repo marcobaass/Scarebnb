@@ -11,6 +11,7 @@
         <div id="offers">
           <% if @offers.any? %>
             <% @offers.each do |offer| %>
+              <%= cl_image_tag offer.photos.first.key, crop: :fill unless offer.photos.empty? %>
               <h4><%= offer.title %></h4>
               <p><%= offer.description %></p>
               <p><%= offer.city %></p>
@@ -23,25 +24,6 @@
       </div>
     </div>
   </div>
-
-  <div class="grid-body">
-    <% @offers_all.each do |offer| %>
-      <div class="">
-        <div class="card rounded shadow-sm" style="width: 18rem;">
-          <% offer.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, crop: :fill %>
-          <% end %>
-          <div class="card-body">
-          <h4 class="card-title"><%= offer.title %></h4>
-          <p><%= offer.price %>€</p>
-          <%= link_to "", offer_path(offer), class: "stretched-link" %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  </div>
-
 
   <div>
     <h2>Last minute booking</h2>
