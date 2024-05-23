@@ -1,11 +1,27 @@
 <main>
-  <div id="banner" class="d-flex justify-content-center align-items-center mb-4">
-    <h1 class="">Search for a scary place !</h1>
+  <div id="banner">
+    <h1 id="banner-img">Search for a scary place !</h1>
   </div>
 
-  <div class="grid-container">
-  <div class="">
-    <h2>Where to go in {user_location}</h2>
+  <h2>Where to go in {user_location}</h2>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-8">
+        <div id="offers">
+          <% if @offers.any? %>
+            <% @offers.each do |offer| %>
+              <h4><%= offer.title %></h4>
+              <p><%= offer.description %></p>
+              <p><%= offer.city %></p>
+              <p><%= offer.address %></p>
+            <% end %>
+            <% else %>
+            <em>Sorry, no offers found.</em>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="grid-body">
