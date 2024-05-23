@@ -14,13 +14,23 @@
     </ul>
   </div>
 
-  <div class="navigation">
-    <ul>
-      <li> <%= link_to "LOG IN", new_user_session_path, class: 'main-link' %></li>
-    </ul>
-  </div>
-</nav>
 
+
+<li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://img.freepik.com/vektoren-premium/vektor-cartoon-illustration-des-gruseligen-vampirs-graf-dracula-grossartig-fuer-halloween_75817-1556.jpg" />
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <% if user_signed_in?  %>
+            <%= link_to 'Help', offers_path, class: "main-link" %>
+            <%= link_to 'Account', dashboard_path, class: "main-link" %>
+            <%= link_to 'Log Out', destroy_user_session_path, class: "main-link", data: {turbo_method: :delete}%>
+            <% else %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: "main-link" %>
+            <%= link_to 'Help', offers_path, class: "main-link" %>
+            <%= link_to 'Account', dashboard_path, class: "main-link" %>
+            <% end %>
+            </div>
+          </li>
+</nav>
 
 
 
