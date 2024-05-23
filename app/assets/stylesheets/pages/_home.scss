@@ -36,7 +36,7 @@ main {
 .grid-body {
   display: grid;
   margin: 0 10%;
-  gap: 3rem;
+  gap: 1rem;
   grid-template-columns: repeat( auto-fit, minmax(3rem, 19rem) );
   align-items: center;
   justify-content:center;
@@ -50,4 +50,20 @@ main {
 
 .search-form {
   padding: 1rem 0 12rem 0;
+}
+
+// Card Styles
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  border-radius: 0.75rem;
+  background-color: #b9b9b9;
+}
+
+.card-img {
+  width: 100%;
+  padding: 0.2rem;
+  border-radius: 0.75rem 0.75rem 0 0;
 }
