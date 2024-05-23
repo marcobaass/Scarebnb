@@ -6,7 +6,7 @@ $white: #FFF;
 
 main {
   font-family: $font-family;
-  
+
 }
 
 #banner {
@@ -22,7 +22,7 @@ main {
 
 #banner-img {
   font-size: 3.5rem;
-  padding: 12rem 0;
+  padding: 12rem 0 0;
   margin: 0;
   text-shadow: red 2px 2px;
 }
@@ -30,12 +30,7 @@ main {
 .card {
     &:hover {
       box-shadow:none !important;
-
   }
-}
-
-.grid-container {
-
 }
 
 .grid-body {
@@ -45,4 +40,14 @@ main {
   grid-template-columns: repeat( auto-fit, minmax(3rem, 19rem) );
   align-items: center;
   justify-content:center;
+}
+
+.searchfield {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-form {
+  padding: 1rem 0 12rem 0;
 }
