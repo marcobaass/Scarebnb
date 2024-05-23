@@ -4,18 +4,27 @@ $font-family: "Roboto", sans-serif;
 $primary-color: #b9b9b9;
 $white: #FFF;
 
-body {
-  font-family: $font-family !important;
-  padding-top: 65px;
+main {
+  font-family: $font-family;
+  
 }
 
 #banner {
-  height: 45vh ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: $primary-color;
   background-image: url("jan-jakub-nanista-z9hvkSDWMIM-unsplash.jpg");
   background-position: center;
   background-size: cover;
   color: $white;
+}
+
+#banner-img {
+  font-size: 3.5rem;
+  padding: 12rem 0;
+  margin: 0;
+  text-shadow: red 2px 2px;
 }
 
 .card {

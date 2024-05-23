@@ -1,12 +1,30 @@
-.navbar-lewagon {
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+#navbar {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  background-image: url("/app/assets/images/navbar_background.jpg");
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navigation ul{
+display: flex;
+align-items: center;
+margin: 0;
+padding: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navigation ul li {
+  list-style: none;
+  margin: 1.5rem 0.5rem;
 }
