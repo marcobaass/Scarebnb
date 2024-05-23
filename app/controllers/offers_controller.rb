@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     if params[:query].present?
       @offers = Offer.search_offers(params[:query])
