@@ -19,23 +19,26 @@
 
   <h2>Where to go in {user_location}</h2>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-8">
-        <div id="offers">
-          <% if @offers.any? %>
-            <% @offers.each do |offer| %>
-              <%= cl_image_tag offer.photos.first.key, crop: :fill unless offer.photos.empty? %>
+  <div class="">
+    <div class="grid-body">
+      <% if @offers.any? %>
+        <% @offers.each do |offer| %>
+          <div class="card-container">
+            <%= link_to offer_path(offer) do %>
+              <% if offer.photos.present? %>
+                <%= cl_image_tag offer.photos.first.key, crop: :fill, class: "card-img" %>
+              <% end %>
               <h4><%= offer.title %></h4>
               <p><%= offer.description %></p>
               <p><%= offer.city %></p>
               <p><%= offer.address %></p>
+              <p><%= offer.price %></p>
             <% end %>
-            <% else %>
-            <em>Sorry, no offers found.</em>
-          <% end %>
-        </div>
-      </div>
+          </div>
+        <% end %>
+      <% else %>
+        <em>Sorry, no offers found.</em>
+      <% end %>
     </div>
   </div>
 

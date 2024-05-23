@@ -1,13 +1,16 @@
 <!-- Image and text -->
 <nav id="navbar">
   <div class = "logo">
+    <%= link_to root_path do %>
     <%= image_tag "ScaredBnb.jpeg", id: 'logo' %>
+    <% end %>
+
   </div>
 
   <div class="navigation">
     <ul>
       <li> <%= link_to "OFFER", new_offer_path, class: 'main-link' %> </li>
-      <li> <%= link_to "BOOK", dashboard_path, class: 'main-link' %></li>
+      <li> <%= link_to "BOOKINGS", dashboard_path, class: 'main-link' %></li>
     </ul>
   </div>
 
