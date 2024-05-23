@@ -1,19 +1,40 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <% @offer.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, crop: "fit" %>
-      <% end %>
-  </div>
-    <div class="col">
-      <%=  @offer.title  %>
-      <%=  @offer.city  %>
-      <%=  @offer.address  %>
-      <%=  @offer.price  %>
-      <%= render 'offers/booking' %>
+<div class="container-show">
+  <div class="pictures">
+    <div class="cards">
+
+      <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+          <% @offer.photos.each do |photo| %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, crop: "fit", class: "d-block w-100" %>
+          </div>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </div>
 
-<%= render "shared/map", markers: @markers %>
+  <div class="details">
+    <h1 class="h1-details">Details</h1>
+    <h2><%=  @offer.title  %></h2>
+    <h2 class= "details-location">Location:</h2> <h2><%=  @offer.city  %></h2>
+    <h2 class= "details-address">Address:</h2><h2> <%=  @offer.address  %></h2>
+    <h2 class= "details-price">Price:</h2><h2> <%=  @offer.price  %></h2>
+    <p><%= @offer.description %></p>
+  </div>
+  <div class="booking">
+    <%= render 'offers/booking' %>
+  </div>
+</div>
 
+<div class="map">
+  <%= render "shared/map", markers: @markers %>
 </div>

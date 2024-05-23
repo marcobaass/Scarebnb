@@ -8,9 +8,9 @@
       <%= simple_form_for [@offer, @booking] do |f| %>
         <%= f.input :start_date, label: 'Start Date', as: :date, html5: true, placeholder: 'Enter Date', input_html: { class: 'form-control' } %>
         <%= f.input :end_date, label: 'End Date', as: :date, html5: true, placeholder: 'Enter Date', input_html: { class: 'form-control' } %>
+        <%= link_to 'Go Back', dashboard_path, class: 'btn btn-warning' %>
         <%= f.submit 'Submit', class: 'btn btn-primary' %>
       <% end %>
-        <%= link_to 'Go Back', dashboard_path, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
