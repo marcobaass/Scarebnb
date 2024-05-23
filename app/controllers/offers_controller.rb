@@ -14,6 +14,13 @@ class OffersController < ApplicationController
   def show
     @booking = Booking.new(offer: @offer)
     @offer = Offer.find(params[:id])
+
+    @markers = [
+      {
+        lat: @offer.latitude,
+        lng: @offer.longitude,
+        map_html: render_to_string(partial: "shared/map", locals: {offer: @offer})
+      }]
   end
 
   def create
