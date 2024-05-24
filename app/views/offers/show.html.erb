@@ -4,8 +4,8 @@
 
       <div id="carouselExampleFade" class="carousel slide carousel-fade">
         <div class="carousel-inner">
-          <% @offer.photos.each do |photo| %>
-          <div class="carousel-item active">
+          <% @offer.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
             <%= cl_image_tag photo.key, crop: "fit", class: "d-block w-100" %>
           </div>
           <% end %>

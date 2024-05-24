@@ -44,10 +44,30 @@ class OffersController < ApplicationController
     end
   end
 
+  def accept
+    if @offer.accepted!
+      redirect_to @offer, notice: 'Offer accepted'
+    else
+      redirect_to @offer, notice: 'Offer could not be accepted - please try again'
+    end
+  end
+
+  def reject
+    if @offer.rejected!
+      redirect_to @offer, notice: 'Offer rejected'
+    else
+      redirect_to @offer, notice: 'Offer could not be rejected - please try again'
+    end
+  end
+
   private
 
   def offer_params
     params.require(:offer).permit(:title, :images, :description, :price, :city, :address, photos: [])
+  end
+
+  def set_offer
+    @offer = Offer.find(params[:id])
   end
 
 end
