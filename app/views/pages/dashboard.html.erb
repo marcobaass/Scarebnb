@@ -2,9 +2,7 @@
 <div class="">
 
   <div class="booking-section">
-
     <h1>Youre Bookings <%= current_user.email %> </h1>
-
     <div class="grid-body">
       <% if @bookings.any? %>
           <% @bookings.each do |booking| %>
@@ -31,6 +29,7 @@
   </div>
 
   <div class="map-section">
+  <h1>Where you'll be</h1>
     <div class="map-bookings">
       <%= render "shared/map", markers: @markers %>
     </div>
@@ -56,7 +55,7 @@
                 <%= link_to "Delete", offer_path(offer), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
                 <%= render "update", offer: offer %>
               </div>
-              
+
             </div>
           <% end %>
         <% else %>
