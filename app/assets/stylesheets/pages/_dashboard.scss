@@ -13,24 +13,35 @@
   background-color:  #e9e8ff;
 }
 
+.offers-section {
+  margin-top: 3rem;
+  p {
+    margin: 0;
+  }
+}
+
 .map-bookings {
   width: 60%;
   padding: 2rem;
 }
 
-
-
-
-
-
-
-
-
-.wrapper-card {
-  position: relative;
-}
 .delete-button {
   position: absolute;
   bottom: -5px;
   left: 150px;
+}
+
+.update {
+  position: absolute;
+  display: inline-block;
+  left: 0.625rem;
+  bottom: 0.625rem;
+}
+
+.destroy {
+  color: white;
+  position: absolute;
+  display: inline-block;
+  left: 3.625rem;
+  bottom: 0.625rem;
 }
