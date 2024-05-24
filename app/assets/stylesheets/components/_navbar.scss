@@ -66,3 +66,16 @@
 #navbarDropdown{
   cursor: pointer;
 }
+
+#navbarDropdown:hover {
+  transform: scale(1.35);
+}
+
+.main-link:hover{
+  background-color: black;
+  color: white;
+  border-style: dashed;
+  border-color: red;
+  box-shadow: 10px 5px 5px red;
+  transition: 0.3s;
+}

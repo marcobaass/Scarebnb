@@ -2,10 +2,9 @@
 <div class="">
 
   <div class="booking-section">
-
     <h1 id="welcome" >Youre Bookings <%= current_user.username %></h1>
 
-    <div class="grid-body">
+   <div class="grid-body">
       <% if @bookings.any? %>
           <% @bookings.each do |booking| %>
             <% offer = booking.offer %>
@@ -31,6 +30,7 @@
   </div>
 
   <div class="map-section">
+  <h1>Where you'll be</h1>
     <div class="map-bookings">
       <%= render "shared/map", markers: @markers %>
     </div>
@@ -51,6 +51,13 @@
                 <div class="money">
                   <p><%= offer.price %> €</p>
                 </div>
+
+              <div class="wrapper-card">
+                <div class="btn btn-primary" data-action="click->toggle#update">Update</div>
+                <%= link_to "Delete", offer_path(offer), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+                <%= render "update", offer: offer %>
+              </div>
+
 
                   <div class="btn btn-primary btn-sm update" data-bs-toggle="modal" data-bs-target="#exampleModal" >✏</div>
                   <%= link_to "🗑", offer_path(offer), class: "btn btn-danger btn-sm destroy", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
