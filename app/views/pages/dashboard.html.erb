@@ -3,7 +3,7 @@
 </div>
 <div class="offer-container d-flex">
 <% @offers.each do |offer| %>
-<div class="card p-2 m-3 d-flex" style="width: 14rem;">
+<div class="card p-2 m-3 d-flex" data-controller="toggle" style="width: 14rem;">
   <% offer.photos.each do |photo| %>
     <%= cl_image_tag photo.key, crop: :fill %>
   <% end %>
@@ -13,8 +13,11 @@
 <p><%= offer.price %></p>
 <div class="wrapper-card">
 
-<%= link_to "", offer_path(offer), class: "stretched-link" %>
-<%= link_to "Delete", offer_path(offer), class: "delete-button", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<%# <%= link_to "", offer_path(offer), class: "stretched-link" %>
+
+<div class="btn btn-primary" data-action="click->toggle#update">Update</div>
+<%= link_to "Delete", offer_path(offer), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<%= render "update", offer: offer %>
 </div>
 
 </div>
