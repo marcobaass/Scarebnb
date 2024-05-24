@@ -7,8 +7,27 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @offer = Offer.find(params[:offer_id])
     @booking.offer = @offer
+    @booking.status = 0
     @booking.save!
     redirect_to dashboard_path
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    if @booking.accepted!
+      redirect_to dashboard_path, notice: 'booking accepted'
+    else
+      redirect_to dashboard_path, notice: 'booking could not be accepted - please try again'
+    end
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    if @booking.rejected!
+      redirect_to dashboard_path, notice: 'booking rejected'
+    else
+      redirect_to dashboard_path, notice: 'booking could not be rejected - please try again'
+    end
   end
 
 end

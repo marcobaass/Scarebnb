@@ -9,9 +9,10 @@ Rails.application.routes.draw do
 
   resources :offers, only: [:new, :index, :create, :show, :edit, :update, :destroy] do
     resources :bookings, only: [:create]
-    patch :accept
-    patch :decline
   end
+  get 'accept/:id', to: 'bookings#accept', as: :accept
+  get 'reject/:id', to: 'bookings#reject', as: :reject
+
 
   get 'dashboard', to: 'pages#dashboard'
 end

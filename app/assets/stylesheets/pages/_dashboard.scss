@@ -1,11 +1,42 @@
-.grid-body {
+.container-dashboard {
   display: grid;
-  margin: 0 10% 3rem;
-  gap: 1rem;
-  grid-template-columns: repeat( auto-fit, minmax(3rem, 16rem) );
-  align-items: center;
-  justify-content:center;
+  grid-template-columns: 1fr 1fr;
 }
+
+.host {
+  border: 5px solid;
+  padding-top: 20px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.host h1{
+  padding-top: 5px;
+  text-decoration: underline;
+}
+
+.guest {
+  border: 5px solid;
+  padding-top: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.guest h1{
+  text-decoration: underline;
+  padding-top: 5px;
+}
+
+.title-dashboard {
+  margin-left: 20px;
+  margin-top: 80px;
+  margin-bottom: 10px;
+}
+
+// .grid-body {
+//   display: grid;
+//   grid-template-columns: 1fr;
+// }
 
 .map-section {
   display: flex;
@@ -18,14 +49,6 @@
   padding: 2rem;
 }
 
-
-
-
-
-
-
-
-
 .wrapper-card {
   position: relative;
 }
@@ -33,4 +56,13 @@
   position: absolute;
   bottom: -5px;
   left: 150px;
+}
+
+.offers-section {
+  margin-bottom: 100px;
+}
+
+.title-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

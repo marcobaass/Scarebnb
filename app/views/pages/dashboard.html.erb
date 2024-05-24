@@ -1,13 +1,79 @@
 
-<div class="">
+<div class="title-dashboard">
+  <h1>Your Bookings, <%= current_user.email %> </h1>
+</div>
+  <div class="container-dashboard">
 
-  <div class="booking-section">
 
-    <h1>Youre Bookings <%= current_user.email %> </h1>
+  <div class="host">
+    <h1>Hosting</h1>
+    <div class="d-flex justify-content-between">
+      <div class="booking-section-host">
+        <h2>Confirmed</h2>
+        <% if @booked_bookings.any? %>
+          <div class="grid-body">
+            <% @booked_bookings.each do |booking| %>
+              <% offer = booking.offer %>
+              <div class="card-container">
+                <%= link_to offer_path(offer) do %>
+                  <% if offer.photos.present? %>
+                    <%= cl_image_tag offer.photos.first.key, crop: :fill, class: "card-img" %>
+                  <% end %>
+                  <h4><%= offer.title %></h4>
+                  <p><%= offer.city %></p>
+                  <p><%= offer.address %></p>
+                  <div class="money">
+                    <p><%= offer.price %> €</p>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <em>Sorry, no offers found.</em>
+        <% end %>
+      </div>
 
-    <div class="grid-body">
-      <% if @bookings.any? %>
-          <% @bookings.each do |booking| %>
+      <div class="pending-section-host">
+        <h2>Pending</h2>
+        <% if @pending_bookings.any? %>
+          <div class="grid-body">
+            <% @pending_bookings.each do |booking| %>
+              <% offer = booking.offer %>
+              <div class="card-container">
+                <%= link_to offer_path(offer) do %>
+                  <% if offer.photos.present? %>
+                    <%= cl_image_tag offer.photos.first.key, crop: :fill, class: "card-img" %>
+                  <% end %>
+                  <h4><%= offer.title %></h4>
+                  <p><%= offer.city %></p>
+                  <p><%= offer.address %></p>
+                  <div class="money">
+                    <p><%= offer.price %> €</p>
+                  </div>
+                  <%= link_to "Accept", accept_path(booking) %>
+                  <%= link_to "Reject", reject_path(booking) %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <em>Sorry, no offers found.</em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="guest">
+    <h1>Travelling</h1>
+    <div class="d-flex justify-content-between">
+    <div class="booking-section-guest">
+      <h2>Confirmed</h2>
+      <% if @my_booked_bookings.any? %>
+        <div class="grid-body">
+          <% @my_booked_bookings.each do |booking| %>
             <% offer = booking.offer %>
             <div class="card-container">
               <%= link_to offer_path(offer) do %>
@@ -23,20 +89,51 @@
               <% end %>
             </div>
           <% end %>
-        <% else %>
-          <em>Sorry, no offers found.</em>
-        <% end %>
+        </div>
+      <% else %>
+        <em>Sorry, no offers found.</em>
+      <% end %>
+    </div>
+
+    <div class="pending-section-guest">
+      <h2>Pending</h2>
+      <% if @my_pending_bookings.any? %>
+        <div class="grid-body">
+          <% @my_pending_bookings.each do |booking| %>
+            <% offer = booking.offer %>
+            <div class="card-container">
+              <%= link_to offer_path(offer) do %>
+                <% if offer.photos.present? %>
+                  <%= cl_image_tag offer.photos.first.key, crop: :fill, class: "card-img" %>
+                <% end %>
+                <h4><%= offer.title %></h4>
+                <p><%= offer.city %></p>
+                <p><%= offer.address %></p>
+                <div class="money">
+                  <p><%= offer.price %> €</p>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <em>Sorry, no offers found.</em>
+      <% end %>
+
       </div>
-
+    </div>
   </div>
+</div>
 
-  <div class="map-section">
+ <div class="map-section">
     <div class="map-bookings">
       <%= render "shared/map", markers: @markers %>
     </div>
   </div>
 
   <div class="offers-section">
+    <div class="title-card"><h1>Your Offers, <%= current_user.email %> </h1></div>
+
     <div class="grid-body">
       <% if @offers.any? %>
           <% @offers.each do |offer| %>
@@ -56,7 +153,7 @@
                 <%= link_to "Delete", offer_path(offer), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
                 <%= render "update", offer: offer %>
               </div>
-              
+
             </div>
           <% end %>
         <% else %>
