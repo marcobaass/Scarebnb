@@ -14,10 +14,10 @@ Offer.destroy_all
 User.destroy_all
 
 puts "Creating users"
-User.create!(email: 'jeremy.rome93@gmail.com', password: '123456')
-User.create!(email: 'clemence.lc@gmail.com', password: '123456')
-User.create!(email: 'picture@marcobaass.com', password: '123456')
-user = User.new(email: 'sertopico@gmail.com', password: '123456')
+User.create!(email: 'jeremy.rome93@gmail.com', password: '123456', username: "RomieRome")
+User.create!(email: 'clemence.lc@gmail.com', password: '123456', username: "Clemantine")
+User.create!(email: 'picture@marcobaass.com', password: '123456', username: "Marcito")
+user = User.new(email: 'sertopico@gmail.com', password: '123456', username: "El Professore")
 user.save!
 puts 'Users created'
 
@@ -29,4 +29,3 @@ puts 'Creating bookings'
 booking = Booking.new(status: 1, start_date: '2024/10/11', end_date: '2024/10/15', user_id: user.id, offer_id: offer.id)
 booking.save!
 
-# Offer.photos.attach(io: file, filename: "")
