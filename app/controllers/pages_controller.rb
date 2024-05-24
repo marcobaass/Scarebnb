@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def dashboard
     # @offers = Offer.all
-    @offers = Offer.where(user: current_user)
+    @offers = Offer.where(user: current_user).order(:id)
     @bookings = Booking.where(user: current_user)
     @markers = @offers.geocoded.map do |offer|
       {
