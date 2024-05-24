@@ -9,6 +9,15 @@ main {
 
 }
 
+#welcome {
+  display: inline-block;
+  text-align: center;
+  margin: 2rem 0 2rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #f16760;
+  border-radius: 1rem;
+}
+
 #banner {
   display: flex;
   justify-content: center;

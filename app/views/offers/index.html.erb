@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <h2>Where to go in {user_location}</h2>
+  <h2 id="welcome">Haunted Houses for you</h2>
 
   <div class="">
     <div class="grid-body">
@@ -29,7 +29,6 @@
                 <%= cl_image_tag offer.photos.first.key, crop: :fill, class: "card-img" %>
               <% end %>
               <h4><%= offer.title %></h4>
-              <p><%= offer.description %></p>
               <p><%= offer.city %></p>
               <p><%= offer.address %></p>
               <div class="money">
@@ -43,9 +42,4 @@
       <% end %>
     </div>
   </div>
-
-  <div>
-    <h2>Last minute booking</h2>
-  </div>
-
 </main>
