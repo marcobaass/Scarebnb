@@ -13,7 +13,8 @@
           <%= f.input :description, label: 'Description', placeholder: 'Enter description', input_html: { class: 'form-control' } %>
           <%= f.input :price, label: 'Price', placeholder: 'Enter price', input_html: { class: 'form-control' } %>
           <!--<%= f.input :images, label: 'Images', placeholder: 'Upload images', input_html: { class: 'form-control' } %>-->
-        </div>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      </div>
       <div class="modal-footer">
         <%= link_to 'Go Back', dashboard_path(@offers), class: 'btn btn-danger' %>
           <%= f.submit 'Update', class: 'btn btn-primary' %>
