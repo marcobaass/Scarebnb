@@ -1,3 +1,4 @@
+
 <div class="">
 
   <div class="booking-section">
@@ -59,4 +60,28 @@
       </div>
   </div>
 
+</div>
+
+
+
+<div class="mt-5 mb-4"></div>
+  <h1>This is Your Personal Dashboard, <%= current_user.email %> </h1>
+</div>
+<div class="offer-container d-flex">
+<% @offers.each do |offer| %>
+<div class="card p-2 m-3 d-flex" data-controller="toggle" style="width: 14rem;">
+  <% offer.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, crop: :fill %>
+  <% end %>
+<h3><%= offer.title %></h3>
+<h4><%= offer.city %></h4>
+<p><%= offer.address %></p>
+<p><%= offer.price %></p>
+<div class="wrapper-card">
+
+<%# <%= link_to "", offer_path(offer), class: "stretched-link" %>
+
+<div class="btn btn-primary" data-action="click->toggle#update">Update</div>
+<%= link_to "Delete", offer_path(offer), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<%= render "update", offer: offer %>
 </div>

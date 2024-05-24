@@ -35,6 +35,18 @@ class OffersController < ApplicationController
     end
   end
 
+  def edit
+    # Go back to Create offer form and let user update
+    # Then send to update
+    @offer = Offer.find(params[:id])
+  end
+
+  def update
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_params)
+    redirect_to dashboard_path
+  end
+
   def destroy
     @offer = Offer.find(params[:id])
     if @offer.destroy
