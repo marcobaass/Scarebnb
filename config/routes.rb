@@ -9,7 +9,15 @@ Rails.application.routes.draw do
 
   resources :offers, only: [:new, :index, :create, :show, :edit, :update, :destroy] do
     resources :bookings, only: [:create]
+    patch :accept
+    patch :decline
   end
 
   get 'dashboard', to: 'pages#dashboard'
+end
+
+class AddStatusToOffers < ActiveRecord::Migration[7.0]
+  def change
+    add_column :offers, :status, :integer, default: 0, index: true
+  end
 end

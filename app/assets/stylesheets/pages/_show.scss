@@ -2,12 +2,12 @@
   display: flex;
 }
 .pictures {
-  box-shadow: 10px red;
+  width: 33vw !important;
 }
 
 .cards {
   margin-top: 50px;
-  margin-left: 10px;
+  margin-left: 30px;
   margin-right: 10px;
   border-radius: 10px;
 
@@ -15,18 +15,24 @@
 
 .pictures img {
   border-radius: 5px;
+  box-shadow: 10px red;
+}
+
+.carousel-inner {
+  box-shadow: 5px 5px 5px rgba(180, 63, 63, 0.498);
 }
 
 .details {
   border: 1px solid grey;
   border-radius: 4px;
-  width: 50%;
+  width: 33vw !important;
   padding: 25px;
   margin-top: 50px;
+  margin-left: 25px;
 }
 
 .booking {
-  margin-left: 5px;
+  margin-left: 30px;
   margin-right: 5px;
 }
 
