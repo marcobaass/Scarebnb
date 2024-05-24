@@ -51,7 +51,7 @@
                 <div class="money">
                   <p><%= offer.price %> €</p>
                 </div>
-                <div class="btn btn-primary btn-sm update" data-bs-toggle="modal" data-bs-target="#exampleModal" >✏</div>
+                <div class="btn btn-primary btn-sm update" data-bs-toggle="modal" data-bs-target="#<%= offer.id %>" >✏</div>
                 <%= link_to "🗑", offer_path(offer), class: "btn btn-danger btn-sm destroy", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
                 <%= render "update", offer: offer %>
 
