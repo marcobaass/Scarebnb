@@ -79,9 +79,21 @@ main {
   box-shadow: 2px 2px 4px rgb(204, 204, 204),-2px -2px 4px rgb(204, 204, 204);
 }
 
+.card-container-owner {
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 20rem;
+  border-radius: 0.75rem;
+  background-color: #e9e8ff;
+  position: relative;
+  box-shadow: 2px 2px 4px rgb(204, 204, 204),-2px -2px 4px rgb(204, 204, 204);
+}
+
 .card-img {
   width: 100%;
-  height: 70%;
+  height: 10rem;
   border-radius: 0.75rem 0.75rem 0 0;
   margin-bottom: 1rem;
   object-fit: cover;
@@ -131,8 +143,4 @@ main {
 
 .search:hover span {
   padding-right: 25px;
-}
-
-.card-container:hover{
-  
 }
